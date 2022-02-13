@@ -1,7 +1,10 @@
 import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/provider'
-import { extendTheme } from '@chakra-ui/react'
+import Layout from '../components/Layout'
 import type { AppProps } from 'next/app'
+import Fonts from '../fonts/Fonts'
+import theme from '../theme/theme'
+
 //import Head from 'next/head'
 //import dynamic from 'next/dynamic'
 //import faviconImage from '../public/'
@@ -39,24 +42,16 @@ const HeadComponent = () => {
 }
 */
 
-const config = {
-  initialColorMode: "dark",
-  useSystemColorMode: false,
-}
 
-const colors = {
-  black: '#200'
-}
-const theme = extendTheme({
-  colors,
-  config
-})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <Fonts />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </>
   )

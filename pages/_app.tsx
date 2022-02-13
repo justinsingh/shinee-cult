@@ -5,7 +5,8 @@ import type { AppProps } from 'next/app'
 import Fonts from '../fonts/Fonts'
 import theme from '../theme/theme'
 
-//import Head from 'next/head'
+import Head from 'next/head'
+import faviconImage from '../public/favicon.png'
 //import dynamic from 'next/dynamic'
 //import faviconImage from '../public/'
 /*
@@ -42,11 +43,29 @@ const HeadComponent = () => {
 }
 */
 
-
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <title>SHINEE CULT</title>
+        <meta name="description" content="SHINEE CULT" />
+        <link rel="icon" href={faviconImage.src} />
+        <meta name="title" content="SHINEE CULT" />
+        <meta name="description" content="SHINEE CULT" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.shineecult.xyz/" />
+        <meta property="og:title" content="SHINEE CULT" />
+        <meta property="og:description" content="SHINEE CULT" />
+        <meta property="og:image" content="https://github.com/justinsingh/shinee-cult/blob/main/public/shinee-cult-meta-image-banner.png?raw=true" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.shineecult.xyz/" />
+        <meta property="twitter:title" content="SHINEE CULT" />
+        <meta property="twitter:description" content="SHINEE CULT" />
+        <meta property="twitter:image" content="https://github.com/justinsingh/shinee-cult/blob/main/public/shinee-cult-meta-image-banner.png?raw=true" />
+
+      </Head>
       <ChakraProvider theme={theme}>
         <Fonts />
         <Layout>
